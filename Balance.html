@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href = "Account.css">
+<script src="Validation.js" type="text/javascript"></script>
+
+<title>Account Statement</title>
+
+</head>
+<body >
+<form action="BalanceServlet" name="myform" onsubmit="return formValidation();">
+<b><h3>Enter Account Number To View Balance</h3></b>
+<table>
+<tr>
+<td>Account Number</td>
+<td><input type = "text" placeholder = "Account Number" name = "accountNumber"></td>
+</tr>
+
+</table>
+<br>
+
+<input type = "submit" value = "Submit" class = "hi">
+<input type = "reset" value = "Reset" class = "hi">
+
+</form>
+
+</body>
+</html>

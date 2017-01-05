@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href = "Account.css">
+<title>Transfer Amount</title>
+
+<script type="text/javascript">  
+function validateform(){  
+var accountNumber1=document.myform.accountNumber1.value;  
+var accountNumber2=document.myform.accountNumber2.value;  
+var amount=document.myform.amount.value;  
+  
+if (accountNumber1==null || accountNumber1==""){  
+  alert("Account Number can't be empty");  
+  return false;  
+}
+else if(accountNumber2 == ""|| accountNumber2 == " "){  
+  alert("Account Number can't be empty");  
+  return false;  
+  }
+else if(amount == "" || amount == " "){
+	alert("Amount can't be empty");  
+	  return false; 
+}
+}  
+</script>  
+
+<title>Insert title here</title>
+</head>
+<body>
+<form action = "TransferAmountServlet" name="myform" onsubmit="return validateform()">
+<b><h3>Transfer Amount</h3></b>
+<table>
+<tr>
+<td>Enter Account Number to Transfer From</td>
+<td><input type = "number" name = "accountNumber1" placeholder = "Account Number"></td>
+</tr>
+<tr>
+<td>Enter Account Number to Transfer To</td>
+<td><input type = "number" name = "accountNumber2" placeholder = "Account Number"></td>
+</tr>
+<tr>
+<td>Enter Amount to Transfer</td>
+<td><input type = "number" name = "amount" placeholder = "Enter Amount"></td>
+</tr>
+</table><br>
+<input type = "submit" value = "Transfer" class = "k">
+<input type = "reset" value = "Reset" class = "k">
+</form>
+</body>
+</html>

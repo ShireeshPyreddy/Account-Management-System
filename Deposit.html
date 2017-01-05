@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href = "Account.css">
+<script src="Validation.js" type="text/javascript"></script>
+
+<title>Deposit Amount</title>
+</head>
+<body>
+<form action = "DepositAmountServlet"  name="myform" onSubmit="return formValidation();">
+<b><h3>Deposit Amount</h3></b>
+<table>
+<tr>
+<td>Account Number</td>
+<td><input type = "text" placeholder = "Account Number" name = "accountNumber"></td>
+</tr>
+<tr>
+<td>Enter Amount To Deposit</td>
+<td><input type = "number" placeholder = "Deposit Amount" name = "deposit"></td>
+</tr>
+</table><br>
+<input type = "submit" value = "Deposit" class = "q">
+<input type = "reset" value = "Reset" class = "q">
+
+</form>
+</body>
+</html>

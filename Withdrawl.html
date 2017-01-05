@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href = "Account.css">
+<script src="Validation.js" type="text/javascript"></script>
+
+<title>Withdrawl Amount</title>
+
+<title>Insert title here</title>
+</head>
+<body>
+<form action = "WithdrawlAmountServlet"  name="myform" onSubmit="return formValidation();">
+<b><h3>Withdrawl Amount</h3></b>
+<table>
+<tr>
+<td>Account Number</td>
+<td><input type = "text" placeholder = "Account Number" name = "accountNumber"></td>
+</tr>
+<tr>
+<td>Enter Amount To Withdrawl</td>
+<td><input type = "number" placeholder = "Withdrawl Amount" name = "withdrawl"></td>
+</tr>
+</table><br>
+<input type = "submit" value = "Withdrawl" class = "l">
+<input type = "reset" value = "Reset" class = "l">
+
+</form>
+</body>
+</html>

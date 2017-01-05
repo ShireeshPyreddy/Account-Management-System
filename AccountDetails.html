@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href = "Account.css">
+<script>  
+function formValidation() {  
+	var uname = document.myform.customerName;
+	var cnumber = document.myform.contactNumber;  
+	var uadd = document.myform.address;
+	var uemail = document.myform.email;  
+	var ugender = document.myform.gender;
+
+	if(Letters(uname)&&Numbers(cnumber)&&Gender(ugender)&&Address(uadd)&&Mail(uemail)){
+	return true;
+	}
+	else{
+	return false;
+	}
+	}
+
+	function Letters(uname){
+	var letters = /^[A-Za-z\s]+$/;
+	if(uname.value.match(letters))  
+	{  
+	return true;  
+	}  
+	else  
+	{  
+	alert('"Customer Name" cannot be empty and must have alphabet characters only');  
+	return false;  
+	}
+	}
+
+	function Numbers(cnumber){
+	var numbers = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+	if(cnumber.value.match(numbers))  
+	{  
+	return true;  
+	}  
+	else  
+	{  
+	alert('"Contact Number" must contain 10 digits only');  
+	return false;  
+	}  
+	}
+
+	function Gender(ugender){
+		var gender = /^Male$|^Female$/g;
+		if(ugender.value.match(gender)){
+			return true;
+		}
+		else{
+			alert('Please Select The Gender');
+			return false;
+		}
+	}
+
+	function Address(uadd){
+	var address = /^(?=.*\d)[a-zA-Z\s\d\/\-\/,\:\.]+$/;  
+	if(uadd.value.match(address))  
+	{  
+	return true;  
+	}  
+	else  
+	{  
+	alert('Enter Complete Address');  
+	return false;  
+	}
+	}
+	 
+	function Mail(uemail){
+	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+	if(uemail.value.match(mailformat))  
+	{  
+	return true;  
+	}  
+	else  
+	{  
+	alert('You have entered an invalid "email address"!');  
+	return false;  
+	}  
+	}
+</script>  
+
+<title>Add Details</title>
+
+</head>
+<body >
+<form action = "AddAccountServlet" name="myform" onSubmit="return formValidation();">
+<b><h3>Fill In The Details</h3></b>
+<table>
+<tr>
+<td>Customer Name</td> 
+<td><input type = "text" placeholder = "Customer Name" name = "customerName"></td>
+</tr>
+<tr>
+<td>Contact Number</td>
+<td><input type = "text" placeholder = "Contact Number" name = "contactNumber"></td>
+</tr>
+<tr>
+<td>Gender</td>
+<td><input type = "radio" value = "Male" name = "gender" value = "Male">Male
+<input type = "radio" value = "Female" name = "gender" value = "Female">Female</td>
+</tr>
+<tr>
+<td>Address</td>
+<td>
+<textarea placeholder = "Enter The Address" name = "address", class = "o"> 
+</textarea>
+</tr>
+<tr>
+<td>Age</td>
+<td><input type = "number" placeholder = "Age" name = "age"></td>
+</tr>
+<tr>
+<td>Email-Id</td>
+<td><input type = "text" placeholder = "Email" name = "email"></td>
+</tr>
+<tr>
+<td>Date</td>
+<td><input type = "date" name = "date"></td>
+</tr>
+<tr>
+<td>Account Type</td>
+<td>
+<select name = "account" class = "z">
+<option value = "Savings Account">Savings Account</option>
+<option value = "Current Account">Current Account</option>
+</select> 
+</td>
+</tr>
+</table>
+<br>
+<input type = "submit" value = "Submit" class = "h">
+<input type = "reset" value = "Reset" class = "h">
+</form>
+</body>
+</html>
